@@ -8,15 +8,16 @@ import courseCodes from '../codigo_cursos.json'
 
 dotenv.config()
 
-const WAIT_TIME = 500 // in miliseconds
-const SELECTED_COURSE = 'Bacharelado Em Engenharia Eletrônica'
-
 interface Offer {
   code: string;
   description: string;
   jobType: string;
   date: string;
 }
+
+const WAIT_TIME = 500 // in miliseconds
+const SELECTED_COURSE = 'Bacharelado Em Engenharia Eletrônica'
+const SELECTED_CAMPUS = 'Curitiba'
 
 async function fetchOffers (): Promise<Offer[]> {
   const offers: Offer[] = []
@@ -35,7 +36,7 @@ async function fetchOffers (): Promise<Offer[]> {
     // Selects Curitiba campus
     await campusFrame.select(
       'select[name="p_campuscodigo"]',
-      campusCodes['Curitiba']
+      campusCodes[SELECTED_CAMPUS]
     )
 
     const loginButton = await campusFrame.$('input[value="Logar >>"]')
