@@ -19,8 +19,6 @@ interface Offer {
 const WAIT_TIME = 500 // in miliseconds
 const SELECTED_CAMPUS = 'Curitiba'
 
-const SELECTED_COURSE = 'Bacharelado Em Engenharia Elétrica'
-
 async function fetchOffers (): Promise<Offer[]> {
   const offers: Offer[] = []
 
