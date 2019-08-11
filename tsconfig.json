@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es5",            
-    "lib": ["es2015"],          
+    "target": "es5",
+    "lib": ["es2015"],
     "strict": true,
     "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "strictNullChecks": false
   }
 }
