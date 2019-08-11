@@ -19,14 +19,15 @@ async function fetch () {
     const { curso, campus } = argv
 
     if (curso) {
-      console.log(`Obtendo ofertas de ${curso} no campus Curitiba`)
+      console.log(`Obtendo ofertas de ${curso} no campus ${campus}`)
       const offers = await getOffers(curso, campus, RA, SENHA)
       fs.writeFileSync(OUTPUT_FILENAME, JSON.stringify(offers, null, 2))
       console.log(`Ofertas salvas em ${OUTPUT_FILENAME}`)
     } else {
-      console.log(`Obtendo ofertas do campus ${campus}`)
+      console.log(`Obtendo ofertas no campus ${campus}`)
       const offers = await getAllOffersFromCampus(campus, RA, SENHA)
       fs.writeFileSync(OUTPUT_FILENAME, JSON.stringify(offers, null, 2))
+      console.log(`Ofertas salvas em ${OUTPUT_FILENAME}`)
     }
   } catch (err) {
     console.log(`Erro: ${err.message}`)
